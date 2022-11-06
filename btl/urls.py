@@ -26,4 +26,6 @@ urlpatterns = [
     path('', HomeTemplateView.as_view(), name="home_url"),
     path('', include('apps.images.urls')),
     path('', include('apps.detect.urls')),
+    path('', include('apps.webcam.urls')),
+    path('', include('apps.videos.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -18,6 +18,7 @@
         </ul>
             <a href="{% url 'images:upload_images_url' imageset.id %}" class="btn btn-outline-info btn-sm">Upload images</a>
             <a href="{% url 'images:imageset_update_url' imageset.id %}" class="btn btn-outline-info btn-sm">Update ImageSet</a>
+            <a href="{% url 'images:imageset_delete_url' imageset.id %}" class="btn btn-outline-info btn-sm">Delete ImageSet</a>
             {% if imageset.images.count > 0 %}
                 <a href="{% url 'images:images_list_url' imageset.id %}" class="btn btn-outline-info btn-sm">View Images</a>
             {% endif %}

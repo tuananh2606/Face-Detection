@@ -3,7 +3,7 @@ from PIL import Image as I
 
 from django.db import models
 from django.conf import settings
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
@@ -26,6 +26,9 @@ class ImageSet(models.Model):
         super().save(*args, **kwargs)
         print("save() called")
     save.alters_data = True
+
+    def get_delete_url(self):
+        return reverse("images:imageset_list_url", kwargs={})
 
     # def get_dirpath(self):
     #     rootdir = os.path.join(self.user.username, self.name)

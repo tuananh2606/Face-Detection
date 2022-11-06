@@ -20,13 +20,13 @@
                 Drag & Drop Image files here {{imageset.id}} or <strong>click here</strong> to upload.
             </div>
         </form>
+        <button id="imagesUploadBtn" type="submit" class="btn btn-sm btn-outline-info mt-2">Submit</button>
     </div>
     <a class="btn btn-primary" href="{% url 'images:images_list_url' imageset.id %}">Go Image List</a>
-    <button id="imagesUploadBtn" type="submit" class="btn btn-sm btn-outline-info mt-2">Submit</button>
 {% endblock content %}
 
 {% block on_page_js %}
 <script src="{% static 'js/dropzone.min.js' %}"></script>
-<script src="{% static 'js/custom.js' %}"></script>
+<!-- <script src="{% static 'js/custom.js' %}"></script> -->
 
 {% endblock on_page_js %}

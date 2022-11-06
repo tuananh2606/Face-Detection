@@ -33,6 +33,7 @@
   <title>{% block page_title %}Trang chủ{% endblock page_title %}</title>
 </head>
 <body class="{% block body_class %}{% endblock %}">
+  {% include 'partials/_nav.html' %}
   <div class="container mt-4">  
     {% if messages %}
       {% for message in messages %}

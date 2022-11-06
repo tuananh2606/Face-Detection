@@ -138,3 +138,11 @@ class ImagesDeleteUrl(DeleteView):
     def get_success_url(self):
         qs = self.get_object()
         return qs.get_delete_url()
+
+class ImagesetDeleteUrl(DeleteView):
+    model = ImageSet
+
+    def get_success_url(self):
+        qs = self.get_object()
+        print(qs)
+        return qs.get_delete_url()

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load embed_video_tags %}
+
+{% block title %}
+    Multiple videos list
+{% endblock title %}
+
+{% block content %}
+<div class="col-md-9 mt-2">
+    <div class="row">
+        {% for video in videos %}
+        {% with video.get_videourl as videourl %}
+        <div class="col-sm-3">
+            <video class="card-image-top" controls>
+                <source src="{{videourl}}" type="video/mp4"></source>
+            </video>
+            
+            <!-- {% video videourl 'small' %} -->
+            <a href="" class="btn btn-sm btn-outline-success mx-1 my-1">
+                Detect Objects
+            </a>
+        </div>
+        {% endwith %}
+        {% endfor %}
+    </div>
+    
+</div>
+{% endblock content %}

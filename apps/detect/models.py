@@ -24,6 +24,7 @@ class InferencedImage(models.Model):
         ('yolov5m.pt', 'yolov5m.pt'),
         ('yolov5l.pt', 'yolov5l.pt'),
         ('yolov5x.pt', 'yolov5x.pt'),
+        ('best.pt', 'best.pt'),
     ]
 
     yolo_model = models.CharField(_('YOLOV5 Models'),
