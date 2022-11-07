@@ -91,32 +91,32 @@ class VideosUploadView(View):
         videoset = get_object_or_404(VideoSet, id=videoset_id)
         if self.request.method == 'POST':
             videos = self.request.FILES.get("file")
-            print(videos.name)
-            print(videos.temporary_file_path())
+            # print(videos.name)
+            # print(videos.temporary_file_path())
 
-            vid = cv2.VideoCapture(videos.temporary_file_path())
-            while(True):
+            # vid = cv2.VideoCapture(videos.temporary_file_path())
+            # while(True):
     
-                ret, frame = vid.read()
+            #     ret, frame = vid.read()
 
-                # Display the resulting frame
-                cv2.imshow('frame', frame)
+            #     # Display the resulting frame
+            #     cv2.imshow('frame', frame)
                 
-                # the 'q' button is set as the
-                # quitting button you may use any
-                # desired button of your choice
-                if cv2.waitKey(1) & 0xFF == ord('q'):
-                    break
+            #     # the 'q' button is set as the
+            #     # quitting button you may use any
+            #     # desired button of your choice
+            #     if cv2.waitKey(1) & 0xFF == ord('q'):
+            #         break
 
-            # After the loop release the cap object
-            vid.release()
-            # Destroy all the windows
-            cv2.destroyAllWindows()
+            # # After the loop release the cap object
+            # vid.release()
+            # # Destroy all the windows
+            # cv2.destroyAllWindows()
 
-            # for f in request.FILES.getlist('file'):
-            #     print(f.name)
-            #     video = VideoFile(name=f.name, video=f, video_set=videoset)
-            #     video.save()
+            for f in request.FILES.getlist('file'):
+                print(f.name)
+                video = VideoFile(name=f.name, video=f, video_set=videoset)
+                video.save()
 
             # for img in images:
                 

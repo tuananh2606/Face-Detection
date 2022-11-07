@@ -17,7 +17,7 @@
             </video>
             
             <!-- {% video videourl 'small' %} -->
-            <a href="" class="btn btn-sm btn-outline-success mx-1 my-1">
+            <a href="{% url 'detect:detection_video_detail_url' video.id %}" class="btn btn-sm btn-outline-success mx-1 my-1">
                 Detect Objects
             </a>
         </div>

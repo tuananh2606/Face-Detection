@@ -13,6 +13,8 @@ import os
 #     img = cv2.resize(img, (round(scale * width), round(scale * height)))
 
 def stream():
+    
+    print(torch.cuda.is_available())
     cap = cv2.VideoCapture(0)
     yolo_dir = settings.YOLOV5_ROOTDIR
     yolo_weightsdir = settings.YOLOV5_WEIGTHS_DIR
@@ -47,8 +49,8 @@ def stream():
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + open('demo.jpg', 'rb').read() + b'\r\n')
 
-        if cv2.waitKey(1) == ord('q'):
-            break
+        # if cv2.waitKey(1) == ord('q'):
+        #     break
 
     # After the loop release the cap object
     cap.release()
